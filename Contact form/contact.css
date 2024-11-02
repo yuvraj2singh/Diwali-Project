@@ -1,0 +1,249 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: white;   
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    scroll-behavior: smooth;
+    background-color: black;
+    background-image: linear-gradient(rgba(179, 176, 176, 0.227) 1px, transparent 1px), 
+                      linear-gradient(90deg, rgba(179, 176, 176, 0.227) 1px, transparent 1px);
+    background-size: 50px 50px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+::-webkit-scrollbar {
+    width: 12px;
+}
+::-webkit-scrollbar-track {
+    background: black; 
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: white; 
+    border-radius: 10px; 
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #567a56;
+}
+.nav{
+    animation: fadein 2s ease-in-out forwards;
+    z-index: 10;
+    margin: 20px 50px;
+    position: sticky;
+    top: 10px;
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+}
+.nav ul{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size:xx-large;
+    display: flex;
+    gap: 50px;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav ul li{
+    list-style-type: none;
+}
+.nav ul li a {
+    font-weight: 200;
+    text-decoration: none;
+    position: relative;
+}
+
+.nav ul li a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 0;
+    height: 2px;
+    background-color: cyan;
+    transition: width 0.3s ease;
+}
+#contact::after {
+    width: 100%;
+}
+
+.nav ul li a:hover::after {
+    width: 100%;
+}
+
+.My_name{
+    font-family: "Londrina Sketch", sans-serif;
+    font-size: 3.5rem;
+}
+.form-container {
+    margin: 10px auto ;
+    background-color: #222;
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 2px 2px 40px rgba(0, 255, 255, 0.4);
+    width: 320px;
+}
+
+.form-container h1 {
+    color: #0ef;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.form-group {
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+
+.form-group input ,textarea{
+    width: 100%;
+    padding: 12px 10px;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #333;
+    border: 2px solid #0ef;
+    border-radius: 4px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus ,textarea:focus{
+    border-color: #0ff;
+    box-shadow: 0px 0px 10px rgba(0, 255, 255, 0.4);
+}
+
+.form-group label  {
+    position: absolute;
+    top: 50%;
+    left: 12px;
+    color: #aaa;
+    font-size: 1rem;
+    pointer-events: none;
+    transform: translateY(-50%);
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus + label, .form-group input:not(:placeholder-shown) + label,textarea:focus +label {
+    top: -8px;
+    left: 10px;
+    color: #0ef;
+    font-size: 0.8rem;
+    background-color: #222;
+    padding: 0 5px;
+    box-shadow: 0px 0px 5px rgba(0, 255, 255, 0.2);
+}
+
+textarea{
+    height: 60px;
+    resize: none; 
+    padding-top: 10px;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    color: black;
+    background-color: #0ef;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.05rem;
+}
+
+.submit-btn:hover {
+    background-color: #0ff;
+    box-shadow: 0px 0px 10px rgba(0, 255, 255, 0.6);
+}
+footer{
+    margin-top: 2vh;
+    text-align: center;
+    background-color: aqua;
+    padding: 6px;
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    p{
+        color: black;
+    }
+}
+#footer{
+    display: flex;
+    gap: 20px;
+}
+#footer a:hover{
+    img{
+        transform: scale(1.19);
+        transition: .3s ease-in-out;
+    }
+}
+
+@keyframes fadein {
+    0% {
+            opacity: 0;
+        
+    }
+    100% {
+        opacity: 1;
+       
+    }
+}
+@media only screen and (max-width:940px) {
+    .form-container{
+        margin-top: 40px;
+    }
+    .nav ul{
+        font-size: large;
+        gap: 30px;
+    }
+    .My_name{
+        text-align: center;
+        font-family: "Londrina Sketch", sans-serif;
+        font-size: 2rem;
+        letter-spacing:6px;
+    }
+    footer{
+        margin-top: 5vh;
+    }
+}
+
+@media only screen and (max-width:680px) {
+    .form-container h1{
+        font-size: 1.5rem;
+    }
+    .form-group label{
+        font-size:.7rem;
+    }
+    input , textarea{
+        height: 30px;
+    }
+    .submit-btn{
+        font-size: .6rem;
+    }
+    .nav{
+        margin: 20px;
+    }
+    .nav ul{
+        font-size:medium;
+        gap: 15px;
+    }
+    .My_name{
+        text-align: center;
+        font-family: "Londrina Sketch", sans-serif;
+        font-size: 1.5rem;
+        letter-spacing:6px;
+    }
+    footer{
+        margin-top: 18vh;
+    }
+}
